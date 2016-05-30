@@ -25,4 +25,10 @@
  http://www.lijianfei.cn/2015/11/05/learn-Cocoapod-up/?utm_source=tuicool&utm_medium=referral
  03 Podfile Syntax Reference
  https://guides.cocoapods.org/syntax/podfile.html#podfile
+ 04 CocoaPods版本升级那些坑
+ http://www.tuicool.com/articles/URjqQvb
+ 05 CocoaPods/CocoaPods-app
+ https://github.com/cocoapods/cocoapods-app
+ 06 cocoapods官网
+ https://cocoapods.org/app
  */
