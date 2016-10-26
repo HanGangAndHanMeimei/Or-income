@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建多个对象</title>
+
+    <!--主要内容
+    01 生成构造函数
+    02 使用new 方法来创建对个对象
+    03 修改对象的值
+    04 调用对象的方法
+
+    -->
+    <script>
+        //01 生成构造函数
+        function dog() {
+            //001 设置属性
+            //注意：此处使用了this并且使用了 =
+            this.name = null;
+            this.age = null;
+
+            this.eat = function (someThing) {
+                console.log(this.name + '正在吃' + someThing);
+            }
+        }
+
+        //02 创建多个对象
+        var dog1 = new dog();
+        var dog2 = new dog();
+
+        //03 设置对象的属值|修改对象的属性值
+        dog1.name = "旺财";
+        dog1.age = 16;
+        console.log(dog1.name,dog1.age);
+        dog1.age = 18;
+        console.log(dog1);
+        console.log("_________________");
+
+        dog2.name = "阿黄";
+        dog2.age = 1;
+        console.log(dog2.name,dog2.age);
+        console.log(dog2);
+        console.log("_________________");
+
+
+        //04 调用对象的方法
+        dog1.eat("一块味道极佳的牛肉");
+        dog2.eat("一块索然无味的骨头");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

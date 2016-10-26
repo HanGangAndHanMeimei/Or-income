@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js对象的调用</title>
+
+    <script src="DogTest.js"></script>
+    <script>
+
+        //01 创建对象
+        var dog1 = new dog();
+        var dog2 = new dog();
+
+        //02 设置对象
+        dog1.name = "旺财";
+        dog1.age = 16;
+        console.log(dog1.name,dog1.age);
+        dog1.age = 18;
+        console.log(dog1);
+        console.log("_________________");
+
+        dog2.name = "阿黄";
+        dog2.age = 1;
+        console.log(dog2.name,dog2.age);
+        console.log(dog2);
+        console.log("_________________");
+
+
+        //03 调用对象的方法
+        dog1.eat("一块味道极佳的牛肉");
+        dog2.eat("一块索然无味的骨头");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
