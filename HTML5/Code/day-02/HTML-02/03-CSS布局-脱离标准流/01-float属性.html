@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>01-float属性</title>
+
+    <style>
+        #main{
+            background-color: red;
+            width: 500px;
+            height: 400px;;
+        }
+
+        .left{
+            background-color: yellow;
+            width: 100px;
+            height: 80px;
+
+            /*设置让该div显示在父标签的左边*/
+            float: left;
+        }
+
+        .right{
+            background-color: black;
+            width: 100px;
+            height: 80px;;
+
+            /*设置让该div显示在父标签的右边*/
+            float: right;
+        }
+
+        li{
+            /*让列表显示在一行中，靠左或者是靠右边*/
+            float: right;
+            list-style: none;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+<!--
+01 在HTML文档中添加左边和右边的div块，把他们放在大的div中，设置大div的背景颜色为红色，宽度和高度分别为500和400px
+02 分别设置左边和右边div的背景颜色为黄色与绿色，设置宽度和高度为50px
+03 在页面添加一个正常的div标签，可以发现脱离了标准流的标签如左右两个标签同样占用父标签的空间。
+04 演示float的常见应用场景：列表的一行展示|左边浮动|右边浮动
+-->
+</body>
+<div id="main">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div>正常的div文字演示 测试</div>
+</div>
+
+<ul>
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+    <li>列表4</li>
+    <li>列表5</li>
+</ul>
+</html>

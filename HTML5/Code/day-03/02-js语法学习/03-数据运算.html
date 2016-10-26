@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据运算</title>
+
+    <!--主要内容
+        01 字符串操作
+        02 不同数据类型操作
+        03 数组操作
+        04 Math类库的使用
+    -->
+    <script>
+        //01 字符串操作
+        var nameString1 = '文顶顶';
+        var nameString2 = '杨也';
+        var nameString = nameString1 +'就是' +  nameString2;
+        console.log(nameString);
+
+        //02 不同数据类型操作
+        //规律：不同数据类型在操作的时候，只要遇到字符串那么就会强制把所有的变量都转换为字符串处理
+        var str1 = '10' + 10 +10;       //101010
+        var str2 = (10 + 10) +'10';       //2010
+        var str3 = ('10' + '10') + 10;   //101010
+        var str4 = (10 + '10') + 10;     //101010
+        var str5 = ('10' + 10) + 10     //101010
+        var str6 = 10 + '10' + 10       //101010
+
+        console.log(str1);
+        console.log(str2);
+        console.log(str3);
+        console.log(str4);
+        console.log(str5);
+        console.log(str6);
+
+        //03 数组操作
+        //001 创建数组
+        var numbers = [1,2,3,4,5,6];
+
+        //002 提取数组中的数据
+        console.log(numbers[0],numbers[1],numbers[2]);
+
+        //003 遍历数组
+        for(var i =0 ;i<numbers.length;i++)
+        {
+            console.log(numbers[i]);
+        }
+        console.log('_______________________________');
+
+        //004 为数组增加元素
+        numbers.push('文顶顶',25000);
+        for(var i =0 ;i<numbers.length;i++)
+        {
+            console.log(numbers[i]);
+        }
+        console.log('_______________________________');
+
+        //005 删除数组中最后一个元素
+        numbers.pop();
+        for(var i =0 ;i<numbers.length;i++)
+        {
+            console.log(numbers[i]);
+        }
+
+        //04 Math类库操作
+        var min = Math.min(1,2,3,45,6,7);
+        console.log(min);
+        var max = Math.max(1,2,3,4,5,6,7);         //注意在()中不能带[]
+        console.log(max);
+
+        numbers.pop();
+        var minT = Math.min.apply(null,numbers);    //注意第一个参数应该传递null
+        console.log(minT);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

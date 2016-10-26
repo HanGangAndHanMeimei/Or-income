@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>position属性</title>
+
+    <style>
+
+        div{
+            background-color: red;
+            width: 500px;
+            height: 500px;
+
+            /*咒语：父绝子相*/
+            position: relative;
+
+            /*说明：如果position属性设置为static那么子标签在定位的时候会一直往上层寻找，到最后一层*/
+            /*position: static;*/
+        }
+
+        /*01 相对于父标签的定位*/
+
+        .test1{
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+            /*设置该容器的边框，让其成为一个圆圈*/
+            border-radius:50px;
+
+            /*覆盖父标签和当前标签的position属性来进行定位*/
+            position: absolute;
+
+            /*设置圆圈距离父标签的左边和顶部的距离分别为30px和50px*/
+            /*left: 30px;*/
+            /*top: 50px;*/
+
+            /*思考？为什么添加了演示文字后，圆圈就消失不见=>被隐藏 需要考虑新添加标签的宽度和高度可能会覆盖*/
+            /*让圆圈停留在父标签的右下角*/
+            /*right: 20px;*/
+            /*bottom: 20px;*/
+
+            /*设置让圆圈居中显示*/
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .test2{
+            background-color: antiquewhite;
+            height: 400px;
+            width: 80%;
+        }
+
+        /*02 相对于浏览器的定位*/
+        span{
+            background-color: cornflowerblue;
+            width: 100%;
+            height: 50px;
+
+            /*修改span的标签类型，让其变成行内-块级标签*/
+            display: inline-block;
+
+            /*设置让span标签相对于浏览器定位*/
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<!--
+ ——————————————————相对父盒子来定位演示 "position = relative|absolute"
+01 添加一个div，设置背景颜色，宽度和高度(500)px。
+02 在div中添加一个子控件(div)，设置背景颜色，设置宽度和高度为100px,设置圆角为50px，让标签成为一个圆。
+03 修改父盒子position属性的值为 relative；修改子盒子position属性的值为 absolute。
+04 结合上下左右来进行定位，设置子盒子的left和top分别为30px和30px。
+05 修改实现 设置让子盒子停留在父标签的右下角。
+06 添加新的自盒子，验证层级结构（不会相互影响）。
+07 设置让⭕️居中显示，left：50% right:50% 设置平移 transform:translate(-50%,-50%)'
+08 思考：为什么父盒子一定要设置position属性为relative？
+09 答案：如果父盒子的position属性不设置那么默认为static,子盒子在定位的时候会一直往上层盒子中检索，检索position不是static的父级盒子来做定位参考，如果都没有那么就参照最外层的body来定位。
+
+——————————————————相对浏览器来定位演示    "position = fixed"
+10 添加一个和div(父盒子)同级的div,设置该标签的背景颜色和内容。
+11 设置该标签的position属性为fixed,设置bottom=0left=0设置高度为100px设置宽度为100%
+-->
+<!--测试相对于父标签的定位-->
+<div>
+    <div class="test1"></div>
+    <p>测试的文字</p>
+</div>
+<div class="test2"></div>
+
+<!--测试相对于浏览器进行定位-->
+<span></span>
+</body>
+</html>

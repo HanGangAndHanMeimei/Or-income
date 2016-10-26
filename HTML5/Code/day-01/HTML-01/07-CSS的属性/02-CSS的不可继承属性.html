@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSS中可继承的属性</title>
+    <!--文字性的属性可以继承-->
+    <!--背景颜色|区块宽度和高度不可以继承-->
+    <!--注意：段落标签为行内标签，独占一行且可以设置宽度和高度-->
+
+    <style>
+        div{
+            background-color: red;
+            width: 500px;
+            height: 300px;
+        }
+
+        p{
+            background-color: cornflowerblue;
+        }
+        #main{
+            width:200px;
+            height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <p id="main">段落标签1</p>
+    <p>段落标签2</p>
+    <p>段落标签3</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+/*设置外边距和内边距全部都为0*/
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    /*设置背景颜色*/
+    background: url("../imgs/pattern.gif");
+}
+
+#top
+{
+    background-color: red;
+    height: 3px;
+}
+
+#nav{
+    /*设置让内容居中*/
+    text-align: center;
+
+    /*设置外边距-底部*/
+    margin-bottom: 100px;
+}
+
+/*拿到nav中的每一个a标签修改标签的类型为行内-块级标签*/
+#nav ul,#nav ul li{
+    display: inline-block;
+
+}
+
+/*"设置宽度为250px 高度为44px*/
+/*"设置背景颜色*/
+/*"改变标签的类型 ，让行内标签->行内-块级标签 display:inline-block*/
+/*"设置文字的大小 font-size 29px*/
+/*"设置内容垂直居中 line-height 44px*/
+/*"设置外边距 margin 0 8px 让a标签左右之间的间距为8px*/
+/*"设置标签的默认选中，第一个标签以及当鼠标放到某个标签上之时设置背景颜色为白色，文字颜色为黑色*/
+/*"设置外边距-底部 100px*/
+/*'引入外部的字体：@font-face{设置字体|设置字体资源}，在body中通过font-family设置选择的字体*/
+
+#nav li a{
+    /*background-color: white;*/
+    width: 200px;
+    height: 44px;
+
+    /*修改标签的类型 设置a标签的宽度和高度*/
+    display: inline-block;
+    /*设置文字的大小*/
+    font-size: 29px;
+
+    /*设置让文字垂直居中*/
+    line-height: 44px;
+
+    /*设置外边距为8px*/
+    margin: 0 4px;
+    /*去掉文字的下划线*/
+    text-decoration: none;
+
+    /*设置文字颜色为白色*/
+    color: white;
+    font-family: BebasNeue-webfont;
+}
+
+/*注意！！！*/
+#nav ul li a.one,#nav ul li a:hover{
+    /*设置背景颜色为白色，文字颜色为黑色*/
+    background-color: white;
+    color: black;
+}
+
+/*引入外部字体*/
+@font-face {
+    src:url("../fonts/BebasNeue-webfont.ttf");
+    font-family: "BebasNeue-webfont";
+}
+
+/*处理中间的list部分*/
+#list{
+    background-color: white;
+    width: 100%;
+    text-align: center;
+}
+
+#list .love{
+    /*background-color: #1f7e9a;*/
+    width: 320px;
+    /*更改标签的类型为行内-块级标签*/
+    display: inline-block;
+    margin: 15px;
+}
+
+#list .love img{
+    width: 90%;
+}
+#list .love p{
+    font-family: "宋体";
+    text-indent: 20px;
+    margin: 10px 0;
+    text-align: left;
+}
+
+#list .love input{
+    background-color: orange;
+    border: 0px;
+
+    padding: 7px;
+    width: 130px;
+    height: 40px;
+    /*设置圆角*/
+    border-radius: 5px;
+    color: white;
+    font-size: 22px;
+    font-family: BebasNeue-webfont;
+}
+
+/*处理底部视图*/
+#bottom{
+    height: 100px;
+    text-align: center;
+}
+
+#bottom h1
+{
+    color: white;
+    font-size: 22px;
+    font-family: BebasNeue-webfont;
+
+    /*设置外边距为 上下10px,左右0px*/
+    margin: 10px 0;
+}
+
+#bottom ul li{
+    /*修改标签类型为行内块级标签*/
+    display: inline-block;
+}
+
+#bottom ul li img{
+
+    width: 30px;
+    height: 30px;
+
+    margin: 0px 5px;
+}

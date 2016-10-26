@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宠物乐园</title>
+
+    <!--连接外部的CSS样式表-->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<!--
+01 准备阶段
+        ① 创建新的文件夹(宠物大动员)，创建css文件夹|imgs文件夹，创建index名称的HTML页面，导入图片|字体(ttf)资源
+        ② 分析页面结构，对页面的结构进行切分，切分为四个模块(top-nav-list-bottom)
+        ③ 处理页面的外边距和内边距 分别设置为0
+        ④ 设置整个页面的背景（截取一小张图片后，使用该图片进行平铺）
+02 设置头部(线条)
+        设置背景颜色为红色，设置高度为3px
+03 设置导航
+        ① 先在div中添加标签 ul>li>a *5 分别设置对应的内容
+        ② 拿到nav,设置让内容居中 text-align:center
+        ③ 改变所有ul以及所有ul下面li标签的标签类型为行内-块级标签 display:inline-block
+        ④ 拿到所有的a标签 设置导航的具体内容
+-->
+<!--顶部-->
+<div id="top">
+</div>
+
+<!--导航部分-->
+<div id="nav">
+    <ul>
+        <li><a href="" class="one">home</a></li>
+        <li><a href="">about</a></li>
+        <li><a href="">content</a></li>
+        <li><a href="">map</a></li>
+        <li><a href="">wendingding</a></li>
+    </ul>
+</div>
+<div id="list">
+    <div class="love">
+    <img src="imgs/pic1.jpg">
+    <p>清早起床洗裤头， 多少儿女付水流。不是爸爸不要你， 而是妈妈不收留</p>
+    <input type="button" value="Read More">
+    </div>
+    <div class="love">
+        <img src="imgs/pic2.jpg">
+        <p>清早起床洗裤头， 多少儿女付水流。不是爸爸不要你， 而是妈妈不收留</p>
+        <input type="button" value="Read More">
+    </div>
+    <div class="love">
+        <img src="imgs/pic.jpg">
+        <p>清早起床洗裤头， 多少儿女付水流。不是爸爸不要你， 而是妈妈不收留</p>
+        <input type="button" value="Read More">
+    </div>
+    <div class="love">
+        <img src="imgs/pic1.jpg">
+        <p>清早起床洗裤头， 多少儿女付水流。不是爸爸不要你， 而是妈妈不收留</p>
+        <input type="button" value="Read More">
+    </div>
+    <div class="love">
+        <img src="imgs/pic2.jpg">
+        <p>清早起床洗裤头， 多少儿女付水流。不是爸爸不要你， 而是妈妈不收留</p>
+        <input type="button" value="Read More">
+    </div>
+    <div class="love">
+        <img src="imgs/pic.jpg">
+        <p>清早起床洗裤头， 多少儿女付水流。不是爸爸不要你， 而是妈妈不收留</p>
+        <input type="button" value="Read More">
+    </div>
+    <div class="love">
+        <img src="imgs/pic1.jpg">
+        <p>清早起床洗裤头， 多少儿女付水流。不是爸爸不要你， 而是妈妈不收留</p>
+        <input type="button" value="Read More">
+    </div>
+    <div class="love">
+        <img src="imgs/pic2.jpg">
+        <p>清早起床洗裤头， 多少儿女付水流。不是爸爸不要你， 而是妈妈不收留</p>
+        <input type="button" value="Read More">
+    </div>
+    <div class="love">
+        <img src="imgs/pic.jpg">
+        <p>清早起床洗裤头， 多少儿女付水流。不是爸爸不要你， 而是妈妈不收留</p>
+        <input type="button" value="Read More">
+    </div>
+
+</div>
+<div id="bottom">
+    <h1><a>About wendingding</a></h1>
+    <ul>
+        <li><img src="imgs/fb.png" alt=""></li>
+        <li><img src="imgs/g+.png" alt=""></li>
+        <li><img src="imgs/tw.png" alt=""></li>
+        <li><img src="imgs/rss.png" alt=""></li>
+    </ul>
+</div>
+</body>
+</html>

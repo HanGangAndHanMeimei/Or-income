@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap使用</title>
+
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <style>
+
+        /*引入外部字体*/
+        @font-face {
+            src:url("fonts/BebasNeue-webfont.ttf");
+            font-family: "BebasNeue-webfont";
+        }
+
+        #main{
+            /*background-color: black;*/
+            width: 400px;
+            height: 300px;
+        }
+
+        body{
+            background-color: black;
+            text-align: left;
+        }
+        *{
+            margin: 10px;
+        }
+
+        button{
+            height: 44px;
+            margin: 10px;
+
+            border: 0;
+        }
+        .workT{
+            width: 300px;
+            margin-right: 0.1px;
+        }
+
+        .noneWorkT{
+            width: 100px;
+            margin-left: 0.1px;
+        }
+
+        .plan{
+            width: 400px;
+        }
+
+        .allT{
+            width: 960px;
+        }
+
+        /*body{*/
+            /*position: relative;*/
+        /*}*/
+        .right{
+            float: right;
+            font-size: 10px;
+        }
+        .work{
+            margin-left: 0;
+            margin-right: 0;
+            font-size: 10px;
+
+            font-family: BebasNeue-webfont;
+        }
+
+
+        .NO1{
+            width: 200px;
+        }
+        .NO2{
+            width: 160px;
+        }
+        .NO3{
+            width: 120px;
+        }
+        .NO4{
+            width: 60px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div>日期 2016年10月25日</div>
+    <button class="btn btn-success workT">15  ⏰</button>
+    <button class="btn btn-secondary noneWorkT">5  ⏰</button>
+    <button class="btn btn-danger right">计划完成率60%</button>
+    <br>
+    <button class="btn btn-info plan">20  ⏰</button>
+    <button class="btn btn-danger right">计划有效工作时间10小时</button>
+    <br>
+    <button class="btn btn-secondary allT">48  ⏰</button>
+    <div>工作内容</div>
+    <button class="btn btn-danger work NO1">学习HTML5</button>
+    <button class="btn btn-success work NO2">阅读图书</button>
+    <button class="btn btn-info work NO3">工作事项</button>
+    <button class="btn btn-warning work NO4">笔记</button>
+</body>
+</html>

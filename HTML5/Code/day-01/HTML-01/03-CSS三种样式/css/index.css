@@ -1,0 +1,21 @@
+
+body{
+
+    /*设置body的背景颜色*/
+    background-color: palegreen;
+}
+
+div{
+
+    /*设置页面中所有div标签的背景颜色和文字大小*/
+    background-color: red;
+    font-size: 20px;
+    text-decoration:line-through;
+}
+
+p{
+    /*设置页面中所有p段落标签的背景颜色和文字颜色*/
+    background-color: yellow;
+    color: firebrick;
+    font-size: 25px;
+}

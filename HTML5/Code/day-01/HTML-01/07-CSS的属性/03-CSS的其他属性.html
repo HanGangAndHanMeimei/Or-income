@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSS的其他属性</title>
+
+    <style>
+
+        .main{
+            background-color: cornflowerblue;
+            width: 300px;
+            height:300px;
+            visibility: visible; /*设置标签内容不可见 但占位*/
+            cursor: pointer; /*设置光标的类型为一只手*/
+        }
+
+        a{
+            /*设置字体的大小，颜色等*/
+            color: red;
+            font-size: 10px;
+            font-family: "Adobe Caslon Pro";
+        }
+
+        #a1{
+            text-decoration: overline;
+        }
+
+        #a2{
+            text-decoration: underline;
+        }
+
+        #a3{
+            text-decoration: line-through;
+        }
+
+        #a4{
+            /*去除掉超链接中的下划线*/
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<!--"visibility":设置元素是否可见(内容隐藏了，但保持占位-display)-->
+<!--"cursor":规定要显示的光标类型-->
+<!--"font":设置字体 font家族-->
+<!--"text-decoration"：为文本设置修饰(下划线|穿透线等)，可应用于为超链接去除下划线-->
+
+<div class="main"></div>
+<div>
+    hello wendingding
+</div>
+<hr>
+<a>演示测试标签01</a>
+<a>演示测试标签02</a>
+<hr>
+<a id="a1">演示测试标签01</a>
+<a id="a2">演示测试标签02</a>
+<a id="a3">演示测试标签01</a>
+<a id="a4" href="#">演示测试标签02</a>
+
+</body>
+</html>

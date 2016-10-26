@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>标签的类型</title>
+    <style>
+
+        button{
+            /*button标签属于行内-块级标签 可以设置其宽度和高度*/
+            width: 200px;
+            height: 100px;
+            background-color: cornflowerblue;
+        }
+
+        /*a标签属于行内标签无法设置其宽度和高度*/
+        a{
+            width: 400px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<!--01 块级标签-->
+    <!--块级标签的特点：独占一行 + 可以随意设置宽度和高度-->
+    <!--块级标签的ex div p h标签等 -->
+    <div style="background-color: red;width: 50%;height:200px;"></div>
+    <p style="font-size: 20px">段落标签</p>
+    <h1>演示标题</h1>
+    <hr>
+
+<!--02 行内标签-->
+    <!--行内标签的特点：多个标签共占一行 + 不能设置宽度和高度-->
+    <!--行内标签的ex span a label-->
+    <span style="background-color: aquamarine;width: 50%;height: 100px"></span>
+    <a>这是一个a标签1</a>
+    <a style="background-color: bisque">这是一个a标签2</a>
+    <label>这是一个文本标签</label>
+    <hr>
+
+<!--03 行内-块级标签-->
+    <!--行内-块级标签的夜店：多个标签共占一行 + 可以设置宽度和高度-->
+    <!--行内-块级标签的ex button input表单标签如文字输入框 -->
+    <button>我是一个按钮</button>
+    <input type="text" style="width: 400px;height: 100px">
+</body>
+</html>

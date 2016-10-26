@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3重要特性</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+           background-color: red;
+            height: 100px;
+            width: 200px;
+
+            /*设置每个div容器的外边距均为20px*/
+            margin: 20px;
+        }
+
+        /*01 演示RGBA特性*/
+        div.test1{
+            /*设置背景颜色：红+绿+蓝+透明度*/
+            background-color: rgba(255,0,0,1.0)
+        }
+
+        .test2{
+            background-color: rgba(255,0,0,0.8)
+        }
+
+        .test3{
+            background-color: rgba(255,0,0,0.6)
+        }
+
+        .test4{
+            background-color: rgba(255,0,0,0.4)
+        }
+
+        .test5{
+            background-color: rgba(255,0,0,0.2)
+        }
+
+        /*02 阴影*/
+        div:hover{
+
+            /*设置块阴影*/
+            /*语法：box-shadow: h-shadow v-shadow blur spread color inset;*/
+            /*示例：box-shadow: 10px 10px 5px #888888;*/
+
+            /*01 向右和向下方向有10px的阴影*/
+            /*box-shadow: 10px 10px;*/
+
+            /*02 向左和向上方向有10px的阴影*/
+            /*box-shadow: -10px -10px;*/
+
+            /*03 向左和向上方向有10px的阴影,并有5px的模糊*/
+            /*box-shadow: -10px -10px 5px;*/
+
+            /*04 设置阴影的颜色*/
+            /*box-shadow:10px 10px 5px #ddeeff;*/
+
+            /*05 设置内嵌的阴影,注意方向刚好相反*/
+            box-shadow:-10px -10px 5px black inset;
+        }
+
+        /*03 演示设置文字的阴影*/
+        p{
+            font-size: 45px;
+            margin: 40px;
+
+            /*设置文字阴影*/
+            /*向右向下有3px的阴影，10px的模糊，阴影的颜色为红色*/
+            /*注意：文字不能设置内部阴影*/
+            text-shadow: 3px 3px 3px red;
+        }
+
+        /*04 设置圆角*/
+        div.test6{
+            /*padding: 20px;*/
+
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+<!--
+01 添加5个div标签，设置内容分别为1-2-3-4-5
+02 设置所有div的背景颜色，设置宽度和高度分别为200px和100px
+03 设置div的外边距全部为20px "注意：如果相邻的标签都设置了外边距，那么取最大值而非做加法计算"
+04 注释外边距相关的代码，设置每个div的rgba(255,0,0,1.0)实现颜色渐变效果
+——————————
+05 通过伪类实现当鼠标放在div上面的时候，出现块阴影和文字阴影。
+06 设置块阴影 box-shadow:10px 20px 表示水平向右方向有10px的阴影，垂直向下方向有20px的阴影。
+07 设置阴影的颜色，设置模糊，设置内部阴影等
+——————————
+08 在HTML文档中添加p段落标签，设置文字阴影和颜色。text-shadow:3px 3px 10px(模糊) red
+09 尝试实现seemygo的火焰效果。"注意:不能给文字设置内部阴影"
+——————————
+10 为div标签设置圆角为20px border-radius：px
+11 设置左上角的圆角效果，右下角的圆角效果
+-->
+<div class="test1">1</div>
+<div class="test2">2</div>
+<div class="test3">3</div>
+<div class="test4">4</div>
+<div class="test5">5</div>
+<p>莲叶荷田田</p>
+
+<div class="test6"></div>
+</body>
+
+</html>

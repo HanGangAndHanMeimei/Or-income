@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+
+    <!--主要内容
+        01 创建对象
+        02 对象的属性和方法
+        03 获得对象的属性
+        04 调用对象的方法
+    -->
+    <script>
+        //01 创建对象
+        var dog = {
+
+            //02 设置对象的属性和方法
+            //设置对象的属性
+            name:'小狗旺财',
+            age:16,
+
+            //设置对象的方法
+            //注意：如果有多个函数，那么在前项函数结尾的时候需要添加逗号
+            eat:function (someThing) {
+                console.log(this.name + '正在吃' + someThing);
+            },
+
+            run:function (anyWhere) {
+                console.log(this.name + '要去' + anyWhere);
+            }
+        }
+
+        //03 打印获得对象的属性
+        console.log(dog.name,dog.age);
+        //修改对象的属性后重新获取
+        dog.name = 'RMB-收割机';
+        console.log(dog.name);
+
+        //04 调用对象的方法
+        dog.eat('一块很肥美的五花肉');
+        dog.run('天上人间');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

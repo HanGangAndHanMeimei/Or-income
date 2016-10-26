@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSS盒子模型</title>
+    <style>
+
+        div{
+            background-color: red;
+            width: 40%;
+            height:200px;
+
+            /*设置盒子的属性*/
+
+            /*01 设置边框，边框有三个重要的属性：像素|样式|颜色*/
+            border: 10px solid greenyellow;
+
+            /*02 设置内边距*/
+            /*表示上为5px 右边为10px 底部为15px 左边为20px*/
+            /*padding: 5px 10px 15px 20px;*/
+            /*表示上边为5px 左右两边为10px 底部为15px*/
+            /*padding: 5px 10px 15px;*/
+            /*表示上下两边的距离为5px 左右两边的距离为10px*/
+            /*padding:5px 10px;*/
+            /*表示上下左右的距离都是5px*/
+            padding:5px;
+
+            /*03 设置外边距*/
+            /*使用方法同内边距一致*/
+            /*表示距离上下的外边距为10px 左右的外边距为20px*/
+            margin: 10px 20px ;
+
+            /*04 设置最大的宽度*/
+            /*当盒子的宽度低于400px时遵循30%父标签的规则，最多不超过400px*/
+            max-width: 400px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<!--
+01 添加一个div标签，设置内容为盒子模型。
+02 为div设置页内样式，设置宽度400px高度为200px,背景颜色为红色。
+03 使用浏览器运行页面，发现'盒子模型'的内容紧紧的粘住div的左上角。
+04 使用通配符设置当前页面的所有标签的外边距和内边距都==0。
+05 设置盒子的属性
+    ① 设置边框      border = 5px
+    ② 设置内边距    padding:10px 15px 20px 25px(上右下左)
+    ③ 设置外边距    margin:10px 15px
+    ④ 设置宽度为30%，设置最大宽度即max-width为400px,使用浏览器运行并观察。
+-->
+<div>演示盒子模型</div>
+</body>
+</html>

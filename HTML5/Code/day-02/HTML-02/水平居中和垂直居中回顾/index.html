@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>居中回顾</title>
+    <!--水平居中-->
+    <!--01 行内标签 + 行内块级标签 设置父标签的text-algin属性即可-->
+    <!--02 块级标签 设置父标签的属性 + 设置该子标签的外边距左右两边为自动-->
+    <!--垂直居中-->
+    <!--01 行内标签 + 行内块级标签 设置父标签的line-height=height即可-->
+    <!--02 块级标签 在之前的基础上，设置父标签的定位子标签的定位，设置距离top和left的距离并平移，重写line-height属性-->
+
+
+    <style>
+        #main{
+            background-color: red;
+            height: 500px;
+            width: 500px;
+
+            /*设置居中*/
+            text-align: center;
+        }
+
+        #main .test1{
+            background-color: black;
+            color: white;
+            height: 30px;
+            width: 100px;
+
+            /*设置该标签的外边距*/
+            /*margin-left: auto;*/
+            /*margin-right: auto;*/
+
+            margin: 0 auto;
+        }
+
+
+        #main2{
+            background-color: #1f7e9a;
+            width: 500px;
+            height: 300px;
+
+            margin-bottom: 30px;
+
+            /*设置垂直居中*/
+            line-height: 300px;
+
+            /*定位*/
+            position: relative;
+            text-align: center;
+        }
+
+        .test2{
+            position: absolute;
+            top: 50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+
+            /*重写line-height属性*/
+            line-height: 30px; ;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+
+    <!--01 行内标签-->
+    <span>演示行内标签的水平居中问题</span>
+    <br>
+    <!--02 行内-块级标签-->
+    <button>我是按钮</button>
+
+    <!--03 块级标签-->
+    <div class="test1">我是块级标签</div>
+
+</div>
+<hr>
+<div id="main2">
+
+    <!--01 行内标签-->
+    <!--<span>演示行内标签的垂直居中问题</span>-->
+    <!--<br>-->
+    <!--02 行内-块级标签-->
+    <!--<button>我是按钮</button>-->
+
+    <!--03 块级标签-->
+    <div class="test2" style="background-color: black;color:white;width: 200px;height: 30px">测试垂直居中</div>
+</div>
+</body>
+</html>

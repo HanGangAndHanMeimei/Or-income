@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数的使用Title</title>
+
+    <!--主要内容
+        01 函数的定义
+        02 函数的调用
+        03 函数使用示例 - 简单加法计算器
+        04 函数使用示例 - 多个数据的累加计算
+        05 内置数组说明
+        06 匿名函数的创建和调用
+
+    -->
+        <script>
+            //01 简单函数的定义
+            //函数的格式 function 函数名(形参列表){函数体}
+            function see(someOne) {
+                console.log('I see' + someOne);
+            }
+
+            //02 函数的调用
+            see('你');
+
+            //03 函数使用示例 - 简单加法计算器
+            function sum(number1,number2) {
+                return number1 + number2;
+            }
+
+            console.log('简答加法计算器：' + sum(100,100.2));
+            console.log("__________________");
+            //04 函数使用示例 - 多个数据的累加计算
+
+            function sumT(nums) {
+                var add = 0;
+                for(var i = 0;i<nums.length;i++)
+                {
+                    add += nums[i];
+                }
+                return add;
+            }
+            var numbers = [1,2,3,4,5,6,7];
+            console.log('多个数据的累加操作' + sumT(numbers));
+            console.log("__________________");
+
+            //05 内置数组说明 在每个函数内部默认提供了一个名为arguments的数组，可以直接使用
+            function sumD() {
+                var add = 0;
+                for(var i = 0;i<arguments.length;i++)
+                {
+                    add += arguments[i];
+                }
+                return add;
+            }
+
+            //注意:不能直接传递numbers数组
+            console.log('内置arguments数组的使用' + sumD(1,2,3,4,5,6));
+            console.log("__________________");
+
+            //06 匿名函数的创建和使用
+            var Test = function () {
+                console.log('匿名函数测试');
+            }
+
+            Test();
+
+        </script>
+</head>
+<body>
+
+</body>
+</html>

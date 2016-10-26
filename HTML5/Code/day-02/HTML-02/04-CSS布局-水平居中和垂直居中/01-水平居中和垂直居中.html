@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>水平居中和垂直居中</title>
+    <style>
+
+        /*各种类型的标签*/
+            /*行内标签 一行显示多个标签，不能设置宽度和高度*/
+            /*行内-块级标签 一行显示多个标签，能够设置宽度和高度*/
+            /*块级标签 独占一行，可以设置宽度和高度*/
+
+        /*-------------水平居中------------*/
+        /*行内标签和行内-块级标签的水平居中设置*/
+            /*设置父标签的text-algin属性值为center即可*/
+        /*块级标签的水平居中设置*/
+            /*
+            01 设置父标签中的text-algin属性值为center，仅仅只是Div的内容居中但div本身不居中
+            02 设置左右的外边距均为自动
+            */
+
+        #main{
+            background-color: antiquewhite;
+            width: 500px;
+            height: 300px;
+
+            /*设置让子标签居中显示*/
+            text-align: center;
+        }
+
+        button{
+            width: 200px;
+            height:38px;
+            background-color: orange;
+
+            margin: 10px;
+            border: 3px;
+            border-color: black;
+        }
+
+        #main .divTest{
+
+            width: 200px;
+            height:40px;
+            background-color: palevioletred;
+
+            /*第一种设置方法*/
+            /*margin-left: auto;*/
+            /*margin-right: auto;*/
+
+            /*第二种设置方法*/
+            margin: 0 auto;
+        }
+
+        /*-------------垂直居中------------*/
+        /*行内标签和行内块级标签设置垂直居中的步骤*/
+            /*在父标签中设置line-height属性的值==本身的高度*/
+        /*行内-块级标签设置居垂直居中的步骤*/
+            /*
+            01 先在父标签中设置line-height属性的值==本身的高度
+            02 在子标签中重写line-height属性值==自身的高度
+            03 在父标签中设置position属性：relative
+            04 在子标签中设置position属性：absolute
+            05 在子标签中设置top和left的值为50%，并设置平移
+            */
+        #main2{
+            background-color: black;
+            width: 500px;
+            height: 400px;
+
+            /*设置水平居中*/
+            text-align: center;
+            /*设置垂直居中*/
+            line-height:400px;
+
+            /*设置块级标签的垂直居中*/
+            position: relative;
+        }
+
+
+        #main2 button{
+            background-color: aquamarine;
+            width: 240px;
+            height: 50px;
+            border: 5px solid red;
+        }
+
+        #test{
+            background-color: red;
+            width: 200px;
+            height:40px;
+
+            color: white;
+            /*设置垂直居中*/
+            /*第一个步骤 重写子标签的line-height为自身的高度*/
+            line-height: 40px;
+            /*第二个步骤 定位*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+    </style>
+</head>
+<body>
+
+<!--
+01 先创建div外部标签，设置背景颜色|宽度|高度
+——————————————————水平居中
+02 创建行内标签(代表为span),在父标签div中设置text-align属性控制让所有的子标签都居中。
+03 创建行内-块级标签(代表为button),同上。
+04 创建块级标签(代表为div),同上设置，结果是div中的内容居中，但是div本身并没有居中显示。
+    1"设置margin-left "
+    2"设置margin-left和margin-right均为auto "
+    3"margin 0 auto"  推荐
+——————————————————垂直居中
+05 先演示行内标签和行内-块级标签，设置line-height属性
+06 演示块级标签(div)设置设置line-height属性，结果div中的内容居中，但是div的高度被拉伸为父标签的高度。
+    1 在子标签中(div)重写"line-height属性=子标签的高度"
+    2 在父标签中设置position为relative,在子标签中设置position为absolute
+    3 在子标签中设置top和left均为50%
+    4 在子标签中设置平移即 transform为translate(-50%,-50%)
+-->
+
+<!--01 演示水平居中-->
+
+<div id="main">
+
+    <!--001 创建span行内标签-->
+    <span>演示水平居中</span>
+    <br>
+    <!--002 创建button行内-块级标签-->
+    <button>我是按钮</button>
+
+    <!--003 创建div块级标签-->
+    <div class="divTest">我是div块级标签</div>
+
+    <!---------------------------->
+
+</div>
+<hr>
+
+<!--02 演示水平居中-->
+<div id="main2">
+    <!--001 测试行内标签-->
+    <!--<span style="color: white">测试垂直居中</span>-->
+
+    <!--002 测试行内-块级标签-->
+    <!--<button>我是按钮</button>-->
+
+    <!--003 测试块级标签-->
+    <div id="test">测试块级标签的垂直居中</div>
+</div>
+</body>
+</html>
