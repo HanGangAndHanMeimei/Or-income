@@ -1,5 +1,6 @@
 2016年5月29日  任务(持续性任务)
-//01 研究cocoapods
+研究cocoapods
+
 /*
  研究范畴：
  1）什么是cocoapods?
@@ -17,6 +18,7 @@
  价值输出：
  1.在博客园和公司论坛上面提供一篇完善的技术文章阐述和cocoapods相关的所有技能。
  */
+
 /*
  cocoapods相关的一些技术博客（技术参考）
  01 CocoaPods 1.0及相应Mac版App正式发布，Podfile的使用方式发生改变
