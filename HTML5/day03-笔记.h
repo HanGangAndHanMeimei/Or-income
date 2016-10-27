@@ -226,6 +226,79 @@
 
 06 内置对象
     创建文件夹(03-两大内置对象)-新建HTML文件(01-window内置对象)
+    整个HTML文档就是一棵树，而每个标签就是树上面的枝干或者是叶子。
+    window在所有HTML的外层
     内置对象window的作用（"This"）
+    ①  属性和方法
     🌂 所有的全局变量都是window的属性 =>当前页面如果想拿到另外一个页面的全局变量那么就可以通过window来获取 window.value
     🌂 所有的全局函数都是window的方法 =>所有页面的函数都是 window.method
+    🍉 观察下面的代码，判断this
+       /*
+        function Person()
+        {
+            console.log(this);
+        }
+        
+        Person();   #在window中
+        new Person();   #Person对象本身
+        */
+    ② 动态跳转
+       以前我们使用a标签来实现动态跳转，其实也可以使用window来实现如 window.location.href = “www.baidu.com”
+
+
+07 js的DOM操作
+    创建文件夹(03-两大内置对象)-新建HTML文件(02-document内置对象)
+    创建文件夹(03-两大内置对象)-新建HTML文件(03-DOM操作更改图片)
+    创建文件夹(03-两大内置对象)-新建HTML文件(04-DOM操作切换图片)
+    创建文件夹(03-两大内置对象)-新建HTML文件(05-DOM操作图片上下切换)
+    创建文件夹(03-两大内置对象)-新建HTML文件(06-定时器操作)
+    Documnet内置对象的作用：
+        ① 动态的获得页面内的所有标签
+        ② 动态的对页面中的所有标签进行CRUD操作(增删改查)
+    使用示例：
+        001 动态的往body中插入文字或者是标签,注意检查网页源代码和解析是不一样的。
+            document.write("hello world")
+            document.write('<button>我是按钮</button>')
+            document.write('<img src='sdjajdlasdjlajd.png'>')
+        002 实现点击页面按钮的时候替换图片
+            把业务逻辑相关的操作都封装到一个changeImg的函数中
+            ① 首先先拿到标签 var img = Documnet.getElementsClassName('')[0]
+            ② 使用set方法修改标签的src属性 img.src = “要替换的图片”
+        003 实现点击页面按钮的时候切换图片()
+            ① 把script相关的代码全部抽取出来
+            ② 首先先拿到图片，然后再拿到按钮标签
+            ③ 为按钮添加一个onClick点击事件(注意：需要把js相关的代码放置在HTML文档的末尾)
+               "btn.onClick = function(){ 要执行的任务 }"
+            ④ lastIndexOf属性：会查找字符串中是否包含子串，如果包含则返回位置，否则返回-1
+        004 处理上一张下一张图片切换案例
+            ① 创建并布置好img标签|p标签|2button标签(上一张|下一张)
+            ② 闭包执行 (function(){代码块})() ==》别人不能修改这部分内容
+            ③ 获取当前页面的标签(图片标签 + 两个按钮标签)
+            ④ 监听按钮的点击事件 next.onClick = function(){}
+            ⑤ 定义三个变量分别是 min | max | currentIndex ,在按钮的点击事件中做好临界值判断，并处理img的src属性
+        005 定时器操作
+            ① 创建并布置好 div(10) + img + p（文字）标签。
+            ② 设置好标签的CSS特性，设置背景颜色为黑色，文字颜色为红色，大小为150px,让所有的内容都水平居中，设置让文字和图片隐藏。
+            ③ 拿到对应的标签(div&img&p),创建并设置倒计时，每隔1000ms就执行一次函数中的代码
+                var timer = setinteval(function(){ 要执行的任务 } 1000)
+            ④ 拿到标签内部的文字，并修改它 time.innerText = ‘修改标签内部的文字内容’  this.time = time表示给窗口增加了一个属性time
+            ⑤ 隐藏倒计时文字 "注意" 如果标签调用css属性，那么需要使用.style.的语法形式
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
