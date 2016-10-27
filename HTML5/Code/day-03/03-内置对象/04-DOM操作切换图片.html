@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作切换图片</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <img class="img" src="http://dynamic-image.yesky.com/1080x-/uploadImages/2014/188/09/81DY924D4CYS.jpg" width="25%">
+    <p></p>
+    <button class="btn">切换图片</button>
+
+    <script>
+
+        /* 01 先拿到img标签*/
+        var img = document.getElementsByClassName('img')[0];
+
+        /*02 拿到按钮标签*/
+        var btn = document.getElementsByClassName('btn')[0];
+
+        /*03 监听按钮的点击事件*/
+        btn.onclick = function () {
+
+            var nameString1 = 'http://dynamic-image.yesky.com/1080x-/uploadImages/2014/188/09/81DY924D4CYS.jpg';
+            var nameString2 =  'http://t-1.tuzhan.com/c4b197b650d3/c-2/l/2013/08/23/13/8d11df6562704ba9a096afff47815c5f.jpg';
+
+            /*04 切换图片*/
+            if(img.src == nameString1)
+            {
+                img.src = nameString2;
+
+            }else{
+                img.src = nameString1
+            }
+            /*注意：加载站点内的图片或许需要用到lastIndexOf*/
+        }
+
+    </script>
+</body>
+</html>

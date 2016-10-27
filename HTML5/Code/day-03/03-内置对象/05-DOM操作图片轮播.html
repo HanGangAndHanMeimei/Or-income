@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片轮播</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <img  id="img" src="imgs/icon_01.png" width="15%">
+    <p></p>
+    <button id="pre">上一张</button>
+    <button id="next">下一张</button>
+    <p></p>
+
+    <script>
+        /* 01 拿到必要的变量*/
+        var img = document.getElementById('img');
+        var btnPre  = document.getElementById('pre');
+        var btnNext = document.getElementById('next');
+
+
+
+        /*02 处理点击事件*/
+        var currentIndex = 1;
+        var minIndex = 1;
+        var maxIndex = 9;
+
+        btnPre.onclick = function () {
+            if(currentIndex == minIndex)
+            {
+                currentIndex = maxIndex;
+            }else
+            {
+                currentIndex = currentIndex - 1;
+            }
+            img.src = 'imgs/icon_0'+currentIndex + '.png';
+            console.log(img.src);
+        }
+
+
+        btnNext.onclick = function () {
+            if (currentIndex == maxIndex) {
+                currentIndex = minIndex;
+            } else {
+                currentIndex = currentIndex + 1;
+            }
+            img.src = 'imgs/icon_0' + currentIndex + '.png';
+            console.log(img.src);
+        }
+
+    </script>
+</body>
+</html>

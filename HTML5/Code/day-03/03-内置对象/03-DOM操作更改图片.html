@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作更改图片</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+
+    <!--主要操作步骤
+    01 拿到对应的标签
+    02 当点击按钮的时候修改图片标签的内容
+    -->
+
+</head>
+<body>
+<img class="img" src="http://dynamic-image.yesky.com/1080x-/uploadImages/2014/188/09/81DY924D4CYS.jpg" width="25%">
+<p></p>
+<button id="btn">更换图片</button>
+
+<script>
+    /*001 得到图片和按钮标签*/
+    var img = document.getElementsByClassName('img')[0];
+    var btn = document.getElementById('btn');
+
+    /*002 监听按钮的点击事件*/
+    btn.onclick = function () {
+
+        /**003 重新对图片的src属性进行赋值 */
+        img.src = 'http://img5.duitang.com/uploads/item/201510/02/20151002141334_z4aCn.thumb.700_0.jpeg';
+
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window内部对象</title>
+    <!--
+    主要内容
+    01 window内置对象的第一种用法 (拿到属性和方法)
+    02 window内置对象的第二种用法 (页面跳转)
+    -->
+
+    <!--01 属性和方法-->
+    <!--
+    001 所有的全局变量都是window的属性
+    002 所有的全局函数都是window的方法
+    -->
+
+    <script>
+        /*01 定义属性和方法*/
+        var name = '文顶顶';
+        function test() {
+            console.log("测试方法");
+        }
+
+        /*使用window拿到属性*/
+        console.log(window.name);
+        /*修改属性的值*/
+        window.name = 'wendingding';
+        console.log(window.name);
+
+        /*使用window调用全局函数*/
+        test();
+        console.log('____________');
+        window.test();
+
+        /*02 使用window来实现跳转*/
+        window.location.href = 'http://www.baidu.com';
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
