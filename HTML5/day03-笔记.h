@@ -285,6 +285,35 @@
             ⑤ 隐藏倒计时文字 "注意" 如果标签调用css属性，那么需要使用.style.的语法形式
             
 
+08 js中的增删改查
+    ① 增加内容
+        001 直接写入到body标签中，document.write('<button>我是按钮</button>')
+        002 写入到特定的标签中
+            🍊 先获得想要写入的标签 Documnet.getElementsClassName...
+            🍊 创建标签 document.createElement（）
+            🍊 设置创建的标签为要写入标签的子标签 父标签.appendChild(子标签)
+    ② 删除内容
+        拿到对应的标签，然后直接调用remove()方法即可。
+    ③ 修改内容
+    ④ 查询内容
+        001 getElement(s) By id , className , tagName , name
+        002 直接打印 console.log(标签.children|childNods)
+
+
+09 js中常见的事件处理
+    新建HTML文件，命名为JS中常见时间的处理
+    在页面中添加一个img标签，并演示各种事件的触发机制
+    ① 窗口加载完毕 window.onload
+    ② 监听鼠标在图片上面的事件
+       001  首先获得该图片标签 var img = documnet.getElementsClassName....
+       002  监听鼠标进入图片 img.onmouseover=function(){函数体}
+       003  监听鼠标在图片上面移动 img.onmousemove = ...
+       004  监听鼠标离开图片 onmouseout
+
+10 Tab选项卡的结构和样式
+    准备工作：新建文件夹(04-Tab选项卡)，新建css|js文件夹，新建HTML文件命名为index.html,新建相对的css以及js文件并完成链接操作
+    在页面中创建div(id=tab),在div中包含两个div(header-content),先使用通配符设置外边距和内边距分别为0。
+
 
 
 
