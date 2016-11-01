@@ -13,7 +13,7 @@
     ② 分析页面：建议在div中嵌套div,设置div的padding和border以解决margin间距的问题
     ③ 代码演练：
         001 先在div中创建div标签(class=box),往该标签中添加img标签并设置显示图片。
-        002 在CSS文件中先设置margin和padding为〇。 
+        002 在CSS文件中先设置margin和padding为〇。
         003 拿到父盒子，设置position为r(绝对定位)，拿到子标签，设置让子标签浮动在左边(float:left)
         004 设置左边和上边的内边距为15px 即padding 15px 0 0 15px
         005 拿到内部嵌套的div(class=pic),设置边框border=1px,设置内边距为10px,设置背景颜色为白色，设置圆角box-radius=5px
@@ -42,6 +42,45 @@
             (8) 设置让父标签(块级标签)居中 $(parent).style.margin = '0 auto';
             "______________
         003 定位处理
+            (1) 创建数组 var boxHeightArr = [];
+            (2) 遍历所有的盒子，获得每个盒子的高度并添加到数组中(需要判断是否是第一行的盒子)
+            (3) 使用Math库从高度数组中取出最小的高度
+            (4) 创建获取索引的函数，传入高度数组和对应的高度值，返回对应的索引
+            (5) 设置子盒子的定位(问题-后面所有的盒子都叠加)
+                /*
+                 01 获取当前的子盒子  allBox[i]
+                 02 设置position属性
+                 03 设置top == minBoxHeiht + 'px'
+                 04 设置left == minBoxHeightIndex * width + 'px'
+                 */
+            (6) 更新盒子的高度 boxHeightArr[minBoxHeightIndex] += boxHeight; //最小的高度 = 最小值 + 当前盒子的高度
+            (7) 说明瀑布流布局完成之后，如果要修改盒子内部的内容非常容易
+    ④ 监听滚动
+        001 监听当页面滚动的时候加载数据  window.onscroll = function(){函数体}
+        002 创建函数用来判断当前是否满足加载数据的条件
+            (1) 分析应该在什么时候继续加载数据，假设当最后一个盒子内容的一半超过"底线"时加载数据
+            (2) 以图示的方式分析当 最后一个盒子的Y值 + 1/2高度 < 页面的高度+偏移高度的时候加载数据
+            (3) 拿到最后一个盒子 var lastBox = allBox[allBox.length-1];
+            (4) 计算最后一个盒子Dis距离 == lastBox.offsetHeight * 0.5 + lastBox.offsetTop
+            (5) 求出页面的高度并处理兼容性问题(标准->混杂模式)  var clientHeight = document.body.clientHeight
+            (6) 求出页面偏离高度(该值不可能为负)  var scrollHeightTop = document.body.scrollHeightTop
+            (7) 控制台打三个数值 (发现页面的高度为0)
+                "clientHeight = document.body.clientHeight || document.documentElemnet.clientHeight"
+            (8) 判断是否满足加载的条件  boxDis <= clientHeight + scrollHeightTop
+
+    ⑤ 加载数据
+        001 设置假数据  var = imgDataSources = {‘img’:[{},{},{}]};
+        002 遍历数据源数组处理标签
+            (1) 创建最外层的盒子 var newBox = document.createElement('div');
+            (2) 设置className  newBox.className = 'box'
+            (3) 添加到父标签中   $('main').appendChild(newBox)
+            (4) 创建内部的盒子   处理方法同上
+            (5) 设置内部盒子的className并添加到父标签 newBox。appendChild(newPic)
+            (6) 创建图像标签，设置其src属性，并添加到父标签中
+        003 在for循环后重新进行流水布局
+
+
+
 
 
 
