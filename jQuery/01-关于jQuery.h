@@ -27,8 +27,38 @@
             (7) 行为层和结构层分离 ——"可以直接给元素添加事件，使开发人员可以各司其职"
             (8) 丰富的插件|完善的文档|开源支持
         003 获取jQuery
-官网：http://jquery.com/
-托管：
+            官网：http://jquery.com/
+            托管：https://github.com/jquery/jquery
+        004 jQuery库说明
+            (1) jQuery.js           开发版本 220KB
+            (2) jQuery.mini.js      生产版本 31KB
+
+02-jQuery对象和DOM对象
+    ① DOM对象
+        001 翻译：DOM - Document-Object-Model 文档对象模型
+        002 说明：每一份的DOM都可以表示为一棵树，即可以把一个完整的HTML结构用树的方式来表示。
+                 那么，在这棵DOM树种，所有的标签都是DOM元素的节点，可以通过js的方法来获取节点。
+        003 获得DOM对象
+                "var domObj = Document.getElementsById|className|TageName..
+    ② jQuery对象
+        001 说明：jQuery对象即使用jQuery对DOM对象进行包装后的对象。
+                  🌲 jQuery对象是jQuery独有的。
+                  🌲 jQuery对象可以使用库里面的方法。
+                  🌲 jQuery对象无法使用DOM对象的任何方法。
+        002 获得jQuery对象
+                "var  $jQueryObj = $("domObj")
+    ③ DOM <==> jQuery
+        001 把jQuery对象转换为DOM对象
+            ⛵️ 通过索引的方式转换  "var domObjDemo = $jQueryObjDemo[0];
+            ⛵️ 通过get方法获得    "var domObjDemo = $jQueryObjDemo.get(0);
+
+        002 把DOM对象转换为jQuery对象
+            ⛵️ 使用$()包装   "var jQueryDemoObj = $("#main");
+
+    ④  补充说明
+        001 平常使用的jQuery对象都是使用$()函数创建出来的，而$()可以理解为jQuery对象的制造工厂。
+        002 $ 是jQuery的简写形式，即代码中所有使用$的地方都可以使用jQuery来进行替换，它们是等价的。
+
 
 
 
