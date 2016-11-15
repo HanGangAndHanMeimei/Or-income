@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node相关操作</title>
+    <style>
+        div{
+            height: 50px;
+            width: 100px;
+            background: goldenrod;
+            margin: 10px;
+        }
+
+        ul>li{
+
+            height: 40px;
+            width: 200px;
+            background: red;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="divTest">测试使用的DIV</div>
+<ul id="ulTest">
+
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <li>444</li>
+</ul>
+</body>
+<script>
+    /*
+    * 主要知识点 nodeType | nodeName | nodeValue
+    * ① 如何判断节点的类型
+    * ② 如何获得节点内部的属性(属性名称|属性值)
+    * */
+
+    //先获得id为divTest的节点
+    var div = document.getElementById("divTest");
+
+    //打印节点的类型
+    console.log(div.nodeType); //1 Element
+    //打印节点的属性名称
+    console.log(div.nodeName);  //DIV
+    //打印节点的属性值
+    console.log(div.nodeValue); //null
+
+
+    //获得id为ulTest的节点
+    var ul = document.getElementById("ulTest");
+
+    //打印该节点的属性
+    console.log(ul.attributes.length); //长度为:1
+    console.log(ul.attributes[0]);     //id="ulTest"
+
+    var T = ul.attributes[0];
+    console.log(T.nodeName);            //id
+    console.log(T.nodeValue);           //ulTest
+
+
+</script>
+</html>

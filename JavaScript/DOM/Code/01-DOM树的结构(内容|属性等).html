@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DOM树结构</title>
+    <style>
+
+        div{
+            /*设置高度|宽度|背景颜色|外边距*/
+            height: 50px;
+            width: 200px;
+            background: red;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="divTest">测试的DIV</div>
+
+<script>
+    /*此处书写javaScript相关的代码*/
+    /*
+    * 主要知识点
+    * ① 如何根据ID获得页面节点
+    * ② DOM的结构(Documnet + Elements + CharacterData + Attributes)
+    * ③ 如何判断节点的类型(nodeType)
+    * */
+
+    //获得文档中id为divTest的元素(DIV标签)
+    var div = document.getElementById("divTest");
+
+    //判断该元素的类型
+    console.log(div.attributes[0].nodeType);
+    /*
+    * nodeType:判断节点的类型
+    * 1 Element     表示文档标签
+    * 9 Document    整个页面文档
+    * 3 Text        文本信息(字符串) 此处为"测试的DIV"
+    * 2 Attributes
+    * */
+
+</script>
+</body>
+</html>

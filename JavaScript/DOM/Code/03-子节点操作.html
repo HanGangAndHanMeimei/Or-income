@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子节点操作</title>
+    <style>
+        #ulTest1>li{
+            height: 50px;
+            width:20px;
+            background: forestgreen;
+            margin: 5px;
+            transition: 1s;
+        }
+
+    </style>
+</head>
+<body>
+<ul id="ulTest1">
+    <li>01</li>
+    <li>02</li>
+    <li>03</li>
+    <li>04</li>
+</ul>
+<script>
+    /*
+    * 要求:当点击页面的时候,修改列表中所有项让其宽度变宽为200px
+    * 涉及知识点
+    * ① 页面点击事件|函数
+    * ② 获得某个页面元素所有的子元素
+    * ③ 注意childNodes和children在用法上面的区别
+    * ④ 获取某节点的第一个子节点
+    * ⑤ 获取某节点的最后一个子节点
+    * */
+
+    //01 首先得到id为ulTest1的对象
+    var ulTest1 = document.getElementById("ulTest1");
+
+    //02 得到该对象下面的所有子节点
+    var liArrays = ulTest1.children;
+
+    //03 添加页面的点击事件,遍历该数组
+    document.onclick = function () {
+        for (var i = 0;i<liArrays.length;i++)
+        {
+            var li = liArrays[i];
+            if (li.nodeType == 1)
+            {
+                li.style.background = "red";
+                li.style.width = '600px';
+                console.log(li.nodeType);
+            }
+
+        }
+    }
+
+    //⚠️ 注意使用childNodes和children的区别
+
+</script>
+</body>
+
+</html>
