@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父节点操作</title>
+    <style>
+        li{
+            height: 30px;
+            width: 100px;
+            /*background: rebeccapurple;*/
+            margin: 10px;
+            text-decoration: none;
+            color: black;
+
+        }
+
+    </style>
+</head>
+<body>
+<ul id="ulTest">
+    <li><a href=''>超链接01</a></li>
+    <li><a href=''>超链接02</a></li>
+    <li><a href=''>超链接03</a></li>
+    <li><a href=''>超链接04</a></li>
+    <li><a href=''>超链接05</a></li>
+</ul>
+
+<script>
+    /*
+    * 主要知识点
+    * ① 获取某个节点的父节点
+    * ② 设置让父节点隐藏
+    * */
+
+    //① 得到所有以标签名称为a的节点集合
+    var aArray = document.getElementsByTagName("a");
+//    alert(aArray.length);
+
+    //② 遍历该集合
+    for (var i = 0;i<aArray.length;i++)
+    {
+        a = aArray[i];
+        a.onclick = function () {
+            //得到该节点的父节点并设置隐藏
+            a.parentNode.style.display = 'none';
+        }
+    }
+
+
+</script>
+</body>
+</html>
