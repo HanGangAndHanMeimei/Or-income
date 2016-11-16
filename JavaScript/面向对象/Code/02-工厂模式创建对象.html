@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>工厂模式创建对象</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    //01 自定义对象的方式,显得代码冗余
+    var personA = new Object();
+    personA.name = '张三';
+    personA.age = 25;
+    personA.run = function () {
+        console.log(personA.name + '正在奔跑');
+    }
+    personA.run();
+
+    /*************************/
+    var personB = new Object();
+    personB.name = '文顶顶';
+    personB.age = 25;
+    personB.run = function () {
+        console.log(personB.name + '正在奔跑');
+    }
+    personB.run();
+
+    //02 采用工厂模式来实现
+    /*
+    * ① 使用函数来封装实例化对象的代码 --
+    * ② 创建对象并接收
+    * ③ 设置对象的属性
+    * ④ 设置对象的方法
+    * ⑤ 返回对象本身(引用)
+    * */
+
+    function createPerson(name,age) {
+     var obj = new Object();
+     obj.name = name;
+     obj.age = age;
+     obj.logT = function () {
+         console.log(obj.age + '岁的' + obj.name + '正在敲代码');
+     };
+     return obj;
+    }
+
+    //使用工厂模式来创建对象
+    var p1 = createPerson('张三',18);
+    p1.logT();
+
+    var p2 = createPerson('李四',20);
+    p2.logT();
+
+
+    //04 使用This对工厂模式进行改造
+    //在此处this就指代创建出来的对象本身
+    function createPersonTest(name,age) {
+
+        var obj = new Object();
+        this.name = name;
+        this.age = age;
+
+        this.Test = function () {
+            console.log(this.age + '岁的' + this.name + '正在听一路有你有声电台...');
+        };
+        return this;    //注意:此处不能使用obj
+    }
+
+    //创建对象,并调用对象的方法
+    var A = createPersonTest('张三',18);
+    A.Test();
+
+    var B = createPersonTest('李四',20);
+    B.Test();
+
+
+    //05 尝试对工厂模式进行改进
+    //存在的问题:难以识别去具体的类型
+
+</script>
+</html>

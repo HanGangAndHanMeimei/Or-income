@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象的创建</title>
+</head>
+<body>
+</body>
+
+<script>
+    /*
+    * javaScript中的对象:内置对象(数组+date+函数等) + 宿主对象(DoM等) + 自定义对象
+    * */
+
+    //01 内置对象
+    var array = new Array(10,20,5,12);         //使用构造方法创建对象
+    console.log(array.length);                //对象的属性,数组中元素的个数
+    array.push(100);                           //对象的方法
+    console.log(array);
+
+    //02 创建简单的对象
+    var obj = new Object();     //使用构造方法创建对象
+    obj.des = '描述信息';         //为对象添加属性
+    obj.attr = '对象的属性描述';
+    obj.testF = function () {    //为对象添加方法
+        return console.log(obj.des +'+' +  obj.attr + '演示对象的方法调用');
+    }
+
+    obj.testF();        //调用函数的方法
+
+
+    //03 自定义对象Person(类)
+    var personA = new Object();
+    personA.name = '张三';
+    personA.age = 25;
+    personA.run = function () {
+        console.log(personA.name + '正在奔跑');
+    }
+    personA.run();
+
+    /*************************/
+    var personB = new Object();
+    personB.name = '文顶顶';
+    personB.age = 25;
+    personB.run = function () {
+        console.log(personB.name + '正在奔跑');
+    }
+    personB.run();
+
+
+    //04 观察上面代码会发现PersonA和PersonB两个对象的属性和方法是相同的,这段代码显得冗余
+    //思考?能否把相同的部分抽取 --- 抽象的思想
+</script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数创建对象</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    //01 工厂模式创建对象的方法
+    function createPersonTest(name,age) {
+
+        var obj = new Object();
+        this.name = name;
+        this.age = age;
+
+        this.Test = function () {
+            console.log(this.age + '岁的' + this.name + '正在听一路有你有声电台...');
+        };
+        return this;    //注意:此处不能使用obj
+    }
+
+    //创建对象,并调用对象的方法
+    var A = createPersonTest('张三',18);
+    A.Test();
+
+    var B = createPersonTest('李四',20);
+    B.Test();
+
+
+    //02 对上面的方法进行改进
+    /*
+    * ① 调整方法的名称,建议首字母大写
+    * ② 提取new 关键字
+    * ③ 改造为构造函数的方法创建对象
+    * */
+
+    //03 构造函数
+    function Person(name,age) {
+        this.name = name;           //对象的属性
+        this.age = age;
+        this.Test = function () {   //对象的方法
+            console.log(this.age + '岁的' + this.name + '正在听一路有你有声电台...');
+        };
+    }
+
+    //04 使用构造函数创建对象
+    var p1 = new Person('张三',20);
+    var p2 = new Person('wendingding',25);
+    p1.Test();
+    p2.Test();
+
+    //05 构造函数的问题:每创建一个对象就初始化一份属性和方法,如果有很多的对象那将占用很多的空间
+    //每个对象的方法引用并不相同,哪怕他们的参数完全一样也不相同,可如下验证
+    var px = new Person('张三',20);
+    var py = new Person('张三',20);
+    alert(px.Test == py.Test);      //答案为false
+    alert(px.name == py.name);      //答案为true
+
+
+    //06 思考把大多数实例化对象都需要用到的属性和方法共享一份?
+
+
+</script>
+</html>
