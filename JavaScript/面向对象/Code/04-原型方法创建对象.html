@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型方法创建对象</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    /* 第一部分原型方法创建对象基本写法
+    * 构造函数的方式创建对象存在问题:每创建一个对象就要提供一份该对象的属性和方法
+    * 尝试把公共的属性和方法抽取出来
+    *
+    * 原型方法创建对象说明:
+    * 属性:实例化属性 + 原型属性
+    * 方法:实例化属性 + 原型属性
+    * 通常:我们把需要公共的属性和方法抽取出来共享
+    * */
+
+    //01 提供构造函数(该构造函数内部什么都没有)
+    function Person() {}
+
+    //02 添加Person的原型属性
+    Person.prototype.name = '默认的名称';
+    Person.prototype.age = '默认的年龄';
+
+    //03 添加Person的原型方法
+    Person.prototype.run = function () {
+        return this.name + '+' + this.age + '正在跑步';
+    }
+
+    //04 使用原型方法创建多个对象
+    var p1 = new Person();
+    var p2 = new Person();
+
+    //05 调用原型方法
+    console.log(p1.run());
+    console.log(p2.run());
+    alert(p1.run == p2.run);    //使用的方法是同一个(共享的)
+
+
+    /*第二部分:私有实例化属性以及更多的方法***************************************/
+
+    //01 提供一个名称为Box的构造函数(内部拥有实例化属性和方法)
+    function Box(height,width,privateValue) {        //构造方法
+
+        this.height = height;  //实例化属性
+        this.width = width;    //实例化属性
+
+        var _privateValue = privateValue;    //私有属性(作用域为该构造函数内部,外界无法访问),建议以_开头命名变量的名称
+
+        this.SUM = function () {    //实例化方法
+            return this.height + this.width;
+        }
+
+        this.F = function () {   //配合私有属性使用
+            return  _privateValue;
+        }
+    }
+
+    //02 设置原型对象(设置公共的属性和方法)
+    Box.prototype.des = '这是一个盒子';   //设置原型属性
+    Box.prototype.run = function () {
+        return '这个宽度为:' + this.width + '高度为:' + this.height + '的盒子正在努力奔跑...';
+    }
+
+    //03 创建对象
+    var boxA = new Box(100,100);
+    var boxB = new Box(50,50);
+
+    //04 调用对象中的方法(共享方法)
+//    alert(boxA.run());
+//    alert(boxB.run());
+//    alert(boxA.run == boxB.run);    //true
+
+    //05 调用对象中的方法(实例化方法)
+//    alert(boxA.SUM());                 //200
+//    alert(boxB.SUM());                 //100
+//    alert(boxA.SUM == boxB.SUM);       //flase
+
+    //06 尝试访问对象中的私有变量
+    var boxC = new Box(10,10,'私有的Value');
+    //alert(boxC.privateValue);           //undefined
+    //alert(boxC.F());
+
+    //07 注意:可以直接覆盖对象的私有实例化属性
+    boxC.privateValue = '直接覆盖私有属性';
+    alert(boxC.privateValue);
+    alert(boxC.F());
+
+</script>
+</html>
