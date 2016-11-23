@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数创建对象</title>
+</head>
+<body>
+<script>
+
+    //01 构造函数创建对象
+    // ① 函数的首字母大写 ② 内部设置属性和方法使用this ③把new 关键字抽取 ④ 省略返回对象(内部自动返回this对象)
+
+    //001 提供构造函数
+    function Person(name,age) {
+
+        //002 设置对象的属性
+        this.name = name;
+        this.age = age;
+        this.books = ['道德动物','理性动物','社会动物'];
+
+        //003 设置对象的方法
+        this.showName = function () {
+            return '姓名:' + this.name;
+        }
+        this.showAge = function () {
+            return '年龄:' + this.age;
+        }
+    }
+
+    //004 创建对象
+    var p1 = new Person('张老汉',60);
+    var p2 = new Person('张三',30);
+
+    //005 打印对象的属性
+    console.log(p1.name,p1.age);
+    console.log(p2.name,p2.age);
+
+    //006 调用对象的方法
+    console.log(p1.showName(),p1.showAge());
+    console.log(p2.showName(),p2.showAge());
+
+    //007 解决对象识别问题
+   function Cat(name) {
+       this.name = name;
+   }
+
+   var cat1 = new Cat('小花猫');
+    console.log(cat1 instanceof Object);    //true
+    console.log(cat1 instanceof Cat);       //true
+
+    console.log(p1 instanceof Object);      //true
+    console.log(p1 instanceof Person);      //true
+/********************************************************************/
+    console.log('__________________________');
+    //构造函数创建对象新的问题
+    //① 引用不相等(即每次创建对象时候都重新对引用类型进行初始化)
+
+    //01创建两个完全几乎一样的对象
+    var person1 = new Person('张三',20);
+    var person2 = new Person('张三',20);
+
+    //02 比较两个对象是否相等
+    console.log(person1 == person2);        //false
+
+    //03 比较两个对象内部的属性(基本类型)是否相等
+    console.log(person1.name == person2.name);  //true
+    console.log(person1.name === person2.name); //true
+
+    //04 比较两个对象内部的属性(引用类型)是否相等
+    console.log(person1.books == person2.books);    //false
+    console.log(person1.books === person2.books);   //false
+
+    //05 比较两个对象内部的方法是否相等
+    console.log(person1.showName === person2.showName); //false
+
+    //结论:构造函数创建的对象,基本类型的属性相等,而引用类型的属性不相等,说明每次创建对象的时候都会进行一次初始化操作
+    //而对于一些需要共享的属性和方法来说,似乎没有这样处理的必要,因为这样处理会耗费性能
+
+    //06 探讨对内部引用类型的属性修改是否会影响其他的对象
+    console.log('______________________')
+    console.log(person1.books);
+    console.log(person2.books);
+    person1.books.push('动物世界');
+    console.log(person1.books);
+    console.log(person2.books);
+
+    //答案是:不会影响,他们(所有的属性和方法)是不共享的
+
+
+</script>
+</body>
+</html>
