@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>工厂模式创建对象</title>
+</head>
+<body>
+<script>
+
+    //01 工厂模型创建对象(不带参数)
+
+    //001 提供函数封装实例化对象的具体过程
+    function createPerson(name,age) {
+
+        //002 创建对象
+        var person = new Object()
+
+        //003 设置对象的属性
+        person.name = name
+        person.age = age
+
+        //004 设置对象的方法
+        person.showName = function () {
+            return '姓名:' + person.name
+        }
+
+        person.showAge = function () {
+            return '年龄:' + person.age
+        }
+
+        //005 返回对象
+        return person
+    }
+
+    //006 创建多个对象
+    var p1 = createPerson('张三',25);
+    var p2 = createPerson('张老汉',60);
+
+    //007 打印对象的属性
+    console.log(p1.name,p1.age);
+    console.log(p2.name,p2.age);
+
+    //008 调用对象的方法
+    console.log(p1.showName(),p1.showAge());
+    console.log(p2.showName(),p2.showAge());
+
+
+    //02 使用工厂模式创建对象
+    function createCat(name) {
+        var cat = new Object();
+        cat.name = name;
+        return cat;
+    }
+
+    var cat = createCat('小花猫');
+    console.log(cat.name);
+
+    //03 判断cat 和person对象的类型
+    console.log(p1 instanceof  Object);
+    console.log(p2 instanceof  Object);
+    console.log(cat instanceof Object);
+
+    //问题:无法解决对象识别的问题,分不清楚谁是谁?
+
+</script>
+</body>
+</html>

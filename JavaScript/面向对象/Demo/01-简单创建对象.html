@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单创建对象</title>
+</head>
+<body>
+<script>
+
+    //01 简单创建对象
+    //001 创建person对象
+    var person = new Object();
+    //002 设置对象的属性
+    person.name = '文顶顶'
+    person.age = 25
+    //003 设置对象的方法
+    person.showName = function () {
+        return '姓名为:' + person.name;
+    }
+    person.showAge = function () {
+        return '年龄为:' + person.age + '岁';
+    }
+
+    //004 打印对象的属性
+    console.log(person.name);
+    console.log(person.age);
+
+    //005 调用对象的方法
+    console.log(person.showName());
+    console.log(person.showAge());
+
+    //006 修改对象的属性并重新打印
+    person.name = 'wendingding'
+    person.age = 100
+    console.log(person.name);
+    console.log(person.age);
+
+    //02 创建多个对象
+    var cat1 = new Object()
+    cat1.name = '小花猫'
+    cat1.say = function () {
+        return '名字为:' + cat1.name + '的猫咪在喵喵叫'
+    }
+
+    var cat2 = new Object()
+    cat2.name = '小黑猫'
+    cat2.say = function () {
+        return '名字为:' + cat2.name + '的猫咪在喵喵叫'
+    }
+
+
+    //打印对象的属性并调用对象的方法
+    console.log(cat1.name,cat2.name)
+    console.log(cat1.say())
+    console.log(cat2.say())
+
+    //问题:如果要创建多个对象,那么必须把相同的代码在写一遍,显得冗余
+
+
+</script>
+</body>
+</html>
