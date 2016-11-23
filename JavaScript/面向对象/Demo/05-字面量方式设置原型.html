@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字面量方式设置原型</title>
+</head>
+<body>
+<script>
+    //01 字面量方式设置原型
+    //001 提供构造函数
+    function Person() {}
+
+    //002 设置原型对象
+    Person.prototype = {
+
+        //003 设置原型属性
+        name:'默认的名称',
+        age:'默认的年龄',
+        books:['iOS开发','java开发'],
+
+        //004 设置原型方法
+        showName:function () {
+            return '姓名:' + this.name;   //注意:这里不能直接使用name,而要使用this.name
+        }
+    }
+
+    //005 创建对象
+    var person1 = new Person();
+    var person2 = new Person();
+
+    //006 设置对象的属性
+    person1.name = '张老汉';
+    person1.age = 60;
+
+    person2.name = '张三';
+    person2.age = 30;
+
+    //007 打印对象的属性
+    console.log(person1.name,person1.age);
+    console.log(person2.name,person2.age);
+
+    //008 调用对象的方法
+    console.log(person1.showName());
+    console.log(person2.showName());
+
+    //009 引用类型问题
+    console.log(person1.books,person2.books);   //["iOS开发", "java开发"] ["iOS开发", "java开发"]
+    person1.books.push('HTML5开发');
+    console.log(person1.books,person2.books);   //["iOS开发", "java开发", "HTML5开发"] ["iOS开发", "java开发", "HTML5开发"]
+
+    //02 总结
+    //优点:代码的整体封装性更好
+    //问题:① 对象属性的初始值一致 ② 引用类型会对其他对象造成影响
+
+</script>
+</body>
+</html>
