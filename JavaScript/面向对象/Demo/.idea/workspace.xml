@@ -43,11 +43,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="03-构造函数创建对象.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="03-构造函数创建对象.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/03-构造函数创建对象.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1290">
-              <caret line="86" column="26" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
+            <state relative-caret-position="285">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="04-原型方式创建对象.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/04-原型方式创建对象.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -68,6 +78,7 @@
         <option value="$PROJECT_DIR$/01-简单创建对象.html" />
         <option value="$PROJECT_DIR$/02-工厂模式创建对象.html" />
         <option value="$PROJECT_DIR$/03-构造函数创建对象.html" />
+        <option value="$PROJECT_DIR$/04-原型方式创建对象.html" />
       </list>
     </option>
   </component>
@@ -78,8 +89,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="75" />
-    <option name="y" value="164" />
+    <option name="x" value="133" />
+    <option name="y" value="61" />
     <option name="width" value="1240" />
     <option name="height" value="769" />
   </component>
@@ -203,15 +214,15 @@
       <option name="presentableId" value="Default" />
       <updated>1479909488122</updated>
       <workItem from="1479909490408" duration="1567000" />
-      <workItem from="1479911132578" duration="1477000" />
+      <workItem from="1479911132578" duration="2527000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3044000" />
+    <option name="totallyTimeSpent" value="4094000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="75" y="164" width="1240" height="769" extended-state="0" />
+    <frame x="133" y="61" width="1240" height="769" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24938475" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -282,8 +293,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/03-构造函数创建对象.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1290">
-          <caret line="86" column="26" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
+        <state relative-caret-position="285">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04-原型方式创建对象.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
           <folding />
         </state>
       </provider>
