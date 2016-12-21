@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数声明</title>
+</head>
+<body>
+<script>
+
+    /**
+     * 主要观点:
+     * (1) 所有函数内部均有name属性,其值为函数的名称
+     *     匿名函数name属性的值为空的字符串  var func = function(){}  该函数的name属性值为空字符串
+     * (2) 全局的函数会作为全局上下文的属性添加,即成为window的方法(属性)
+     * (3) 推论:函数会自动被添加到当前上下文成为其属性   推论不正确
+     */
+
+    //01 提供全局的有名函数
+    function funcName() {
+        console.log('测试函数funcName');
+    };
+
+    //02 提供全局的匿名函数,使用一个变量引用
+    var func = function () {
+        console.log('匿名函数');
+    };
+
+    console.log(funcName.name);     //funcName
+    console.log(func.name );        //在谷歌浏览器中显示func,在苹果浏览器中显示空字符串
+
+    //调用函数,以下四种调用方法,输出的结果一致
+    funcName();
+    window.funcName();
+    window.func();
+    func();
+
+    function demo() {
+        function demoTest() {
+            console.log('demo' + this);
+        }
+
+        demoTest();             //demo[object Window],this指向的是window对象
+    }
+
+    demo();
+    //window.demoTest();          //不能这样调用
+    //demo.demoTest();            //不能这样调用
+    //demoTest函数的作用域为:demo(){.......中间部分}
+</script>
+</body>
+</html>
